@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router();
 
 // importiamo DATA/POSTS
-const data = require("../data/posts")
+const data = require("../data/data_posts")
 
 // index visualizza tutti gli elementi
 router.get('/', function(req, res) {
