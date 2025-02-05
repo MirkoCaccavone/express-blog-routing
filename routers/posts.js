@@ -1,21 +1,28 @@
 const express = require('express')
 const router = express.Router();
 
+// importiamo DATA/POSTS
+const data = require("../data/posts")
+
 // index visualizza tutti gli elementi
 router.get('/', function(req, res) {
-    res.send('Lista dei post');
+
+    // BONUS
+    // restituisce l'array di oggetti in formato json
+    res.json(data)
     });
 
 // show visualizza un elemento per id
 router.get('/:id', function(req, res) {
-    res.send('Dettagli dei post ' + req.params.id);
+
+    // BONUS
+    // restituisce in formato json l'elemento singolo
+    res.json(data[req.params.id]);
     });
 
 // store crea un elemento
 router.post('/', function(req, res) {
     res.send('Creazione nuovo post ');
-    console.log('Creazione nuovo post ');
-    
     });
 
 // update modifica l'elemento  
